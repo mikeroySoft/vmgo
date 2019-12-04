@@ -1,0 +1,113 @@
+encoding: UTF-8
+info: 
+  title: vmx via yaml reference
+  version: 0.0.1
+  description: a mapping of common vmx flags in yaml format
+configVersion: 8
+displayName: some clever vm name
+ethernet0:
+  present: true
+  pciSlotNumber: 192
+  connectionType: nat
+  virtualDev: vmxnet3
+  wakeOnPcktRcv: false
+  addressType: generated
+  generatedAddress: 00:0C:29:C2:76:E9
+  generatedAddressOffset: 0
+pciBridge0:
+  present: true
+  pciSlotNumber: 17
+pciBridge4:
+  present: true
+  virtualDev: pcieRootPort
+  functions: 8
+  pciSlotNumber: 21 
+pciBridge5:
+  present: true
+  virtualDev: pcieRootPort  
+  functions: 8
+  pciSlotNumber: 22
+pciBridge6:
+  present: true
+  virtualDev: pcieRootPort
+  functions: 8
+  pciSlotNumber: 23
+pciBridge7:
+  present: true
+  virtualDev: pcieRootPort
+  functions: 8
+  pciSlotNumber: 24
+scsi0:
+  present: true
+  virtualDev: pvscsi
+  sasWWID: 50 05 05 62 36 fe 07 50
+  scsi0:0:
+    present: true
+    pciSlotNumber: 160
+    fileName: minikube.vmdk
+    redo: 
+usb:
+  pciSlotNumber: -1
+vmci0:
+  pciSlotNumber: 35
+  id: -2134739223
+sound:
+  pciSlotNumber: -1
+sata0:
+  pciSlotNumber: 36
+floppy0:
+  present: false
+gustOS: other3xlinux-x64
+
+
+mem: 8G
+  hotadd: true
+numvcpus: 4
+powerType:
+  powerOff: soft
+  powerOn: soft
+  reset: soft
+  suspend: soft
+tools:
+  synctime: true
+virtualHW:
+  productCompatibility: hosted
+  version: 10
+msg:
+  autoanswer: true
+uuid:
+  action: create
+  bios: 56 4d 5d b2 36 fe 07 5d-45 58 e9 f1 80 c2 76 e9
+  location: 56 4d 5d b2 36 fe 07 5d-45 58 e9 f1 80 c2 76 e9
+hgfs:
+  mapRootShare: false
+  linkRootshare: false
+extendedConfigFile: path/to/file.vmxf
+numa:
+  autosize:
+    cookie: 40001
+    vcpu:
+      maxPerVirtualNode: 4 
+svga:
+  vramsize: 134217728
+vmotion:
+  checkpointFBSize: 134217728
+monitor:
+  phys_bits_used: 40
+cleanShutdown: true
+softPowerOff: true
+isolation:
+  tools:
+    hgfs:
+      disable: false
+sharedFolder:
+  maxnum: 1
+  sharedFolder0:
+    enabled: true
+    present: true
+    readAccess: true
+    writeAccess: true
+    hostpath: /users
+    guestName: users
+    expiration: never
+
